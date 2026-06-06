@@ -1,0 +1,9 @@
+services:
+  acme-extractor:
+    build: .
+    volumes:
+      - ./config/letsencrypt:/config/letsencrypt
+      - ./certs:/certs
+      - ./acme-extract.sh:/acme-extract.sh
+    working_dir: /
+    command: /acme-extract.sh

@@ -1,0 +1,12 @@
+docker build -t acme_extract . 
+docker compose run --rm -e FQDN=sub.domain.tld acme-extractor
+
+Mounts:
+./config/letsencrypt/
+./certs
+
+
+Out:
+./certs/<FQDN>/
+    certificate.crt
+    private.key
